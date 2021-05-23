@@ -5,6 +5,7 @@
     "algorithm": "cpp",
     "cmath": "cpp",
     "regex": "cpp",
-    "cstdint": "cpp"
+    "cstdint": "cpp",
+    "unordered_map": "cpp"
   }
 }
