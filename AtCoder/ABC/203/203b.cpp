@@ -15,4 +15,17 @@ using P = pair<int, int>;
 
 int main()
 {
+  int N, K;
+  cin >> N >> K;
+
+  int ans = 0;
+  for (int i = 1; i < N + 1; i++)
+  {
+    for (int j = 1; j < K + 1; j++)
+    {
+      ans += (100 * i) + j;
+    }
+  }
+  cout << ans << endl;
+  return 0;
 }
