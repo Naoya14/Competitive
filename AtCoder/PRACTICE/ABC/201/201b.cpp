@@ -6,7 +6,6 @@
 #include <cstdint>
 #include <set>
 #include <unordered_map>
-#define rep(i, n) for (int i = 0; i < (n); ++i)
 
 using namespace std;
 using ll = long long;
@@ -20,4 +19,17 @@ using Graph = vector<vector<int>>;
 
 int main()
 {
+  int N;
+  cin >> N;
+  vector<Pis> V(N);
+
+  for (int i = 0; i < N; i++)
+  {
+    cin >> V[i].second >> V[i].first;
+  }
+
+  sort(V.begin(), V.end(), greater<Pis>());
+
+  cout << V[1].second << endl;
+  return 0;
 }

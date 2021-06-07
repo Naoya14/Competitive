@@ -6,6 +6,9 @@
     "cmath": "cpp",
     "regex": "cpp",
     "cstdint": "cpp",
-    "unordered_map": "cpp"
+    "unordered_map": "cpp",
+    "deque": "cpp",
+    "string": "cpp",
+    "set": "cpp"
   }
 }
