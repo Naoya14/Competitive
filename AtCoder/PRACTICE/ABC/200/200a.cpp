@@ -14,12 +14,18 @@ using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
 
-// math   : pow(A, 2)
-// string : S.length() | reverse(S.begin(), S.end()) | string(A, 'a')
-//          stoll(S) | swap(S[a], S[b]) | S.substr(0, n)
+// string : S.length() reverse(S.begin(), S.end()) string(A, 'a')
 // pair   : sort(V.begin(), V.end(), greater<Pis>());
 // vector : vector<vector<int>> V;
 
 int main()
 {
+  int N;
+  cin >> N;
+
+  int ans = ((N - 1) / 100) + 1;
+
+  cout << ans << endl;
+
+  return 0;
 }

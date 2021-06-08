@@ -5,20 +5,6 @@
 #include <string>
 #include <cstdint>
 
-uintmax_t combination(unsigned int n, unsigned int r)
-{
-  if (r * 2 > n)
-    r = n - r;
-  uintmax_t dividend = 1;
-  uintmax_t divisor = 1;
-  for (unsigned int i = 1; i <= r; ++i)
-  {
-    dividend *= (n - i + 1);
-    divisor *= i;
-  }
-  return dividend / divisor;
-}
-
 using namespace std;
 
 int main()
