@@ -19,8 +19,14 @@ using Graph = vector<vector<int>>;
 //          stoll(S) | swap(S[a], S[b]) | S.substr(0, n)
 // pair   : sort(V.begin(), V.end(), greater<Pis>());
 // vector : vector<vector<int>> V;
-//int di[] = {-1, 0, 1, 0}; int dj[] = {0, -1, 0, 1};
 
 int main()
 {
+  string s;
+  cin >> s;
+
+  string ans = s.substr(1) + s[0];
+
+  cout << ans << endl;
+  return 0;
 }
