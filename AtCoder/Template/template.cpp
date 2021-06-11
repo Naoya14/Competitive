@@ -14,8 +14,6 @@ using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
 
-//int di[] = {-1, 0, 1, 0}; int dj[] = {0, -1, 0, 1};
-
 int main()
 {
 }
