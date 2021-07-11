@@ -16,47 +16,61 @@ int main()
   cin >> Q;
 
   int T, A, B;
-  int exT = 0;
-  int count = 0;
+  bool count_t = false;
 
   for (int i = 0; i < Q; i++)
   {
-    scanf("%d%d%d", &T, &A, &B);
-    if (T == 1 && (count % 2) == 1 && exT == 2)
+    cin >> T >> A >> B;
+    if (T == 1)
     {
-      string temp1 = S.substr(0, N);
-      string temp2 = S.substr(N);
-      S = "";
-      S.append(temp2);
-      S.append(temp1);
-      char temp3 = S[A - 1];
-      char temp4 = S[B - 1];
-      S[B - 1] = temp3;
-      S[A - 1] = temp4;
-      count = 0;
-    }
-    else if (T == 1)
-    {
-      char temp3 = S[A - 1];
-      char temp4 = S[B - 1];
-      S[B - 1] = temp3;
-      S[A - 1] = temp4;
+      if (!count_t)
+      {
+        char temp1 = S[A - 1];
+        char temp2 = S[B - 1];
+        S[B - 1] = temp1;
+        S[A - 1] = temp2;
+      }
+
+      if (count_t)
+      {
+        if (A <= N)
+        {
+          A = N + A;
+        }
+        else if (A > N)
+        {
+          A = A - N;
+        }
+
+        if (B <= N)
+        {
+          B = N + B;
+        }
+        else if (B > N)
+        {
+          B = B - N;
+        }
+
+        char temp1 = S[A - 1];
+        char temp2 = S[B - 1];
+        S[B - 1] = temp1;
+        S[A - 1] = temp2;
+      }
     }
 
-    exT = T;
     if (T == 2)
     {
-      count++;
+      count_t = !count_t;
     }
+  }
 
-    if (i == Q - 1 && T == 2)
-    {
-      string temp1 = S.substr(0, N);
-      string temp2 = S.substr(N);
-      S = "";
-      S.append(temp2);
-      S.append(temp1);
-    }
+  if (count_t)
+  {
+    string temp3 = S.substr(0, N);
+    string temp4 = S.substr(N);
+    S = "";
+    S.append(temp4);
+    S.append(temp3);
   }
 
   cout << S << endl;
