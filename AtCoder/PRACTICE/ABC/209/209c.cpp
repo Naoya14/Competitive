@@ -13,8 +13,27 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int mod = 1000000007;
+const ll mod = 1000000007;
 
 int main()
 {
+  ll n;
+  cin >> n;
+  vector<ll> C(n);
+
+  rep(i, n)
+  {
+    cin >> C[i];
+  }
+
+  sort(C.begin(), C.end());
+
+  ll ans = 1;
+  for (ll i = 0; i < n; i++)
+  {
+    ans = (ans * max((ll)0, C[i] - i)) % mod;
+  }
+
+  cout << ans << endl;
+  return 0;
 }

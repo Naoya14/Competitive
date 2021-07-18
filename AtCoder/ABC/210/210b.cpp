@@ -17,4 +17,29 @@ const int mod = 1000000007;
 
 int main()
 {
+  int n;
+  string s;
+  cin >> n;
+  cin >> s;
+
+  int count;
+  rep(i, n)
+  {
+    if (s[i] == '1')
+    {
+      count = i;
+      break;
+    }
+  }
+
+  if (count % 2 == 0)
+  {
+    cout << "Takahashi" << endl;
+  }
+  else
+  {
+    cout << "Aoki" << endl;
+  }
+
+  return 0;
 }

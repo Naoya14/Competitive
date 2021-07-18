@@ -13,8 +13,36 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int mod = 1000000007;
 
 int main()
 {
+  int n, x;
+  cin >> n >> x;
+
+  int sum = 0;
+  rep(i, n)
+  {
+    int a;
+    cin >> a;
+
+    if (i % 2 == 0)
+    {
+      sum += a;
+    }
+    else
+    {
+      sum += a - 1;
+    }
+  }
+
+  if (sum <= x)
+  {
+    cout << "Yes" << endl;
+  }
+  else
+  {
+    cout << "No" << endl;
+  }
+
+  return 0;
 }

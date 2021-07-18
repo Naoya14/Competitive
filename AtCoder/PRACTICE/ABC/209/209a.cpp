@@ -13,8 +13,18 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int mod = 1000000007;
 
 int main()
 {
+  int a, b;
+  cin >> a >> b;
+
+  if (a > b)
+  {
+    cout << 0 << endl;
+    return 0;
+  }
+
+  cout << b - a + 1 << endl;
+  return 0;
 }
