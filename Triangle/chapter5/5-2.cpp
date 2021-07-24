@@ -17,6 +17,15 @@ const int MOD = 1e9 + 7; // 1000000007;
 const int INF = 1e9;     // 1000000000;
 const ll LINF = 1e18;    // 1000000000000000000;
 
+template <class T>
+void chmin(T &a, T b)
+{
+  if (a > b)
+  {
+    a = b;
+  }
+}
+
 int main()
 {
 }

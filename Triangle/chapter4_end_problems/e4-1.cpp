@@ -13,10 +13,30 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int MOD = 1e9 + 7; // 1000000007;
-const int INF = 1e9;     // 1000000000;
-const ll LINF = 1e18;    // 1000000000000000000;
+const int mod = 1000000007;
+
+int tribo(int n)
+{
+  if (n == 0)
+  {
+    return 0;
+  }
+
+  if (n == 1)
+  {
+    return 0;
+  }
+
+  if (n == 2)
+  {
+    return 1;
+  }
+
+  return tribo(n - 1) + tribo(n - 2) + tribo(n - 3);
+}
 
 int main()
 {
+  cout << tribo(50) << endl;
+  return 0;
 }

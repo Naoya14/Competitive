@@ -13,10 +13,18 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int MOD = 1e9 + 7; // 1000000007;
-const int INF = 1e9;     // 1000000000;
-const ll LINF = 1e18;    // 1000000000000000000;
+const int mod = 1000000007;
+
+int GCD(int m, int n)
+{
+  cout << m << endl;
+  if (n == 0)
+    return m;
+  return GCD(n, m % n);
+}
 
 int main()
 {
+  cout << GCD(51, 15) << endl;
+  return 0;
 }

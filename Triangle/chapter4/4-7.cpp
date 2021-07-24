@@ -13,10 +13,18 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int MOD = 1e9 + 7; // 1000000007;
-const int INF = 1e9;     // 1000000000;
-const ll LINF = 1e18;    // 1000000000000000000;
+const int mod = 1000000007;
 
 int main()
 {
+  vector<ll> a(50);
+  a[0] = 0;
+  a[1] = 1;
+  for (int n = 2; n < 50; n++)
+  {
+    a[n] = a[n - 1] + a[n - 2];
+    cout << a[n] << endl;
+  }
+
+  return 0;
 }

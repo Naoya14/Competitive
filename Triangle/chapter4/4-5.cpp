@@ -13,9 +13,17 @@ using ll = long long;
 using Pii = pair<int, int>;
 using Pis = pair<int, string>;
 using Graph = vector<vector<int>>;
-const int MOD = 1e9 + 7; // 1000000007;
-const int INF = 1e9;     // 1000000000;
-const ll LINF = 1e18;    // 1000000000000000000;
+const int mod = 1000000007;
+
+int fibo(int n)
+{
+  if (n == 0)
+    return 0;
+  else if (n == 1)
+    return 1;
+
+  return fibo(n - 1) + fibo(n - 2);
+}
 
 int main()
 {
