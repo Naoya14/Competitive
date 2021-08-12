@@ -19,39 +19,47 @@ const int MOD = 1e9 + 7; // 1000000007;
 const int INF = 1e9;     // 1000000000;
 const ll LINF = 1e18;    // 1000000000000000000;
 
+vector<int> compress(vector<int> x)
+{
+  int n = x.size();
+  map<int, int> mp;
+
+  for (int i = 0; i < n; ++i)
+  {
+    mp[x[i]] = 0;
+  }
+
+  int id = 1;
+
+  for (auto &p : mp)
+  {
+    p.second = id++;
+  }
+
+  for (int i = 0; i < n; ++i)
+  {
+    x[i] = mp[x[i]];
+  }
+
+  return x;
+}
+
 int main()
 {
   int h, w, n;
   cin >> h >> w >> n;
-
-  vector<Pii> A(n);
-  vector<Pii> B(n);
-
-  map<int, int> H;
-  map<int, int> W;
+  vector<int> a(n);
+  vector<int> b(n);
+  rep(i, n)
+  {
+    cin >> a[i] >> b[i];
+  }
+  a = compress(a);
+  b = compress(b);
 
   rep(i, n)
   {
-    int a, b;
-    cin >> A[i].first >> B[i].first;
-
-    A[i].second = i;
-    B[i].second = i;
-
-    H[a]++;
-    W[b]++;
-  }
-
-  ll hsize = H.size();
-  ll wsize = W.size();
-
-  sort(A.begin(), A.end());
-  sort(B.begin(), B.end());
-
-  for (int i = 0; i < n; i++)
-  {
-    A[i].first = i + 1;
-    B[i].first = i + 1;
+    cout << a[i] << " " << b[i] << endl;
   }
 
   return 0;
