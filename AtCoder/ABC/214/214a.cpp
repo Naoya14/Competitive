@@ -18,54 +18,23 @@ const int MOD = 1e9 + 7; // 1000000007;
 const int INF = 1e9;     // 1000000000;
 const ll LINF = 1e18;    // 1000000000000000000;
 
-template <class T>
-void chmin(T &a, T b)
-{
-  if (a > b)
-  {
-    a = b;
-  }
-}
-
-int n;
-vector<ll> h;
-vector<ll> dp;
-
-ll rec(int i)
-{
-  if (dp[i] < INF)
-  {
-    return dp[i];
-  }
-
-  if (i == 0)
-  {
-    return 0;
-  }
-
-  ll res = INF;
-
-  chmin(res, rec(i - 1) + abs(h[i] - h[i - 1]));
-
-  if (i > 1)
-  {
-    chmin(res, rec(i - 2) + abs(h[i] - h[i - 2]));
-  }
-
-  return dp[i] = res;
-}
-
 int main()
 {
+  int n;
   cin >> n;
-  h.resize(n);
-  for (int i = 0; i < n; ++i)
+
+  if (1 <= n && n <= 125)
   {
-    cin >> h[i];
+    cout << 4 << endl;
+  }
+  else if (126 <= n && n <= 211)
+  {
+    cout << 6 << endl;
+  }
+  else
+  {
+    cout << 8 << endl;
   }
 
-  dp.assign(n, INF);
-
-  cout << rec(n - 1) << endl;
   return 0;
 }
