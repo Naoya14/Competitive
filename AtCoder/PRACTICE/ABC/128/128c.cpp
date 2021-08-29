@@ -29,4 +29,53 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N, M;
+  cin >> N >> M;
+
+  vector<int> S(N);
+
+  for (int i = 0; i < M; ++i)
+  {
+    int K;
+    cin >> K;
+
+    for (int j = 0; j < K; ++j)
+    {
+      int s;
+      cin >> s;
+      s--;
+
+      S[s] |= 1 << i;
+    }
+  }
+
+  int p = 0;
+  for (int i = 0; i < M; ++i)
+  {
+    int x;
+    cin >> x;
+    p |= x << i;
+  }
+
+  int ans = 0;
+  for (int b = 0; b < (1 << N); ++b)
+  {
+    int t = 0;
+
+    for (int i = 0; i < N; ++i)
+    {
+      if (b >> i & 1)
+      {
+        t ^= S[i];
+      }
+    }
+
+    if (t == p)
+    {
+      ans++;
+    }
+  }
+
+  cout << ans << endl;
+  return 0;
 }

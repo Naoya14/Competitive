@@ -5,8 +5,6 @@
 #include <string>
 #include <cstdint>
 #include <set>
-#include <queue>
-#include <stack>
 #include <unordered_map>
 #define rep(i, n) for (int i = 0; i < (n); ++i)
 
@@ -29,4 +27,16 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N, M;
+  cin >> N >> M;
+
+  Graph G(N);
+  for (int i = 0; i < M; ++i)
+  {
+    int a, b;
+    cin >> a >> b;
+    G[a].push_back(b);
+
+    // G[b].push_back(a);
+  }
 }

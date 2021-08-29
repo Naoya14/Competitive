@@ -29,4 +29,24 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N, K;
+  cin >> N >> K;
+
+  double ans = 0;
+  for (int x = 1; x <= N; ++x)
+  {
+    int y = x;
+    double q = 1.0 / N;
+
+    while (y < K)
+    {
+      y *= 2;
+      q /= 2;
+    }
+
+    ans += q;
+  }
+
+  printf("%.12f\n", ans);
+  return 0;
 }

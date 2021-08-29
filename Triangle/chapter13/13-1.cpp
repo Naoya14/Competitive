@@ -27,6 +27,33 @@ const int MOD = 1e9 + 7; // 1000000007;
 const int INF = 1e9;     // 1000000000;
 const ll LINF = 1e18;    // 1000000000000000000;
 
+void search(const Graph &G, int s)
+{
+  int N = (int)G.size();
+
+  vector<bool> seen(N, false);
+  queue<int> todo;
+
+  seen[s] = true;
+  todo.push(s);
+
+  while (!todo.empty())
+  {
+    int v = todo.front();
+    todo.pop();
+
+    for (int x : G[v])
+    {
+      if (seen[x])
+      {
+        continue;
+      }
+      seen[x] = true;
+      todo.push(x);
+    }
+  }
+}
+
 int main()
 {
 }

@@ -29,4 +29,12 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int A, P;
+  cin >> A >> P;
+
+  P = P + (A * 3);
+
+  int ans = P / 2;
+  cout << ans << endl;
+  return 0;
 }

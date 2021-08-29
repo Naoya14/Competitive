@@ -29,4 +29,33 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N;
+  cin >> N;
+
+  vector<int> W(N);
+  for (int i = 0; i < N; ++i)
+  {
+    cin >> W[i];
+  }
+
+  int ans = INF;
+  for (int i = 0; i < N - 1; ++i)
+  {
+    int s1 = 0;
+    int s2 = 0;
+    for (int j = 0; j <= i; ++j)
+    {
+      s1 += W[j];
+    }
+
+    for (int k = i + 1; k < N; ++k)
+    {
+      s2 += W[k];
+    }
+
+    ans = min(ans, abs(s1 - s2));
+  }
+
+  cout << ans << endl;
+  return 0;
 }

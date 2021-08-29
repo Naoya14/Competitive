@@ -29,4 +29,14 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  ll R, D, X;
+  cin >> R >> D >> X;
+
+  for (int i = 0; i < 10; ++i)
+  {
+    X = (R * X) - D;
+    cout << X << endl;
+  }
+
+  return 0;
 }

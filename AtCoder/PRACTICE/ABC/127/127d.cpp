@@ -29,4 +29,47 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N, M;
+  cin >> N >> M;
+
+  vector<int> A(N), B(M), C(M);
+
+  for (int i = 0; i < N; ++i)
+  {
+    cin >> A[i];
+  }
+
+  for (int i = 0; i < M; ++i)
+  {
+    cin >> B[i] >> C[i];
+  }
+
+  priority_queue<pair<ll, ll>> pq;
+
+  for (int i = 0; i < N; ++i)
+  {
+    pq.push(make_pair(A[i], 1));
+  }
+
+  for (int i = 0; i < M; ++i)
+  {
+    pq.push(make_pair(C[i], B[i]));
+  }
+
+  ll ans = 0;
+  for (int i = 0; i < N; ++i)
+  {
+    auto p = pq.top();
+    pq.pop();
+
+    ans += p.first;
+    if (p.second > 1)
+    {
+      p.second--;
+      pq.push(p);
+    }
+  }
+
+  cout << ans << endl;
+  return 0;
 }

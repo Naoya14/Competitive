@@ -29,4 +29,21 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int A, B;
+  cin >> A >> B;
+
+  if (A >= 13)
+  {
+    cout << B << endl;
+  }
+  else if (6 <= A && A < 13)
+  {
+    cout << B / 2 << endl;
+  }
+  else
+  {
+    cout << 0 << endl;
+  }
+
+  return 0;
 }

@@ -29,4 +29,31 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N, M;
+  cin >> N >> M;
+
+  vector<int> L(M), R(M);
+
+  for (int i = 0; i < M; ++i)
+  {
+    cin >> L[i] >> R[i];
+  }
+
+  sort(L.begin(), L.end());
+  sort(R.begin(), R.end());
+
+  int maxL = L[M - 1];
+  int minR = R[0];
+
+  int ans = 0;
+  for (int i = 1; i <= N; ++i)
+  {
+    if (maxL <= i && i <= minR)
+    {
+      ans++;
+    }
+  }
+
+  cout << ans << endl;
+  return 0;
 }

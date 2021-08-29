@@ -29,4 +29,14 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N, K;
+  cin >> N >> K;
+
+  string S;
+  cin >> S;
+
+  S[K - 1] = tolower(S[K - 1]);
+
+  cout << S << endl;
+  return 0;
 }

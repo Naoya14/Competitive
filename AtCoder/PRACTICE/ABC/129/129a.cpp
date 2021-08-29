@@ -29,4 +29,17 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  vector<int> V(3);
+
+  for (int i = 0; i < 3; ++i)
+  {
+    cin >> V[i];
+  }
+
+  sort(V.begin(), V.end());
+
+  int ans = V[0] + V[1];
+  cout << ans << endl;
+
+  return 0;
 }

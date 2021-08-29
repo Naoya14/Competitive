@@ -29,4 +29,31 @@ const ll LINF = 1e18;    // 1000000000000000000;
 
 int main()
 {
+  int N;
+  cin >> N;
+
+  vector<tuple<string, int, int>> t;
+
+  for (int i = 1; i <= N; ++i)
+  {
+    string S;
+    int P;
+
+    cin >> S >> P;
+    P = -P;
+    t.push_back(tie(S, P, i));
+  }
+
+  sort(t.begin(), t.end());
+  for (int i = 0; i < N; ++i)
+  {
+    string s;
+    int p;
+    int id;
+
+    tie(s, p, id) = t[i];
+    cout << id << endl;
+  }
+
+  return 0;
 }
